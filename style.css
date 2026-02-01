@@ -1,11 +1,23 @@
 @import url("https://fonts.googleapis.com/css2?family=Ballet:opsz@16..72&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap");
+:root {
+  color-scheme: light; 
+}
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+html {
+  background: radial-gradient(
+    circle,
+    hsla(355, 72%, 82%, 1) 0%,
+    hsla(353, 74%, 68%, 1) 59%
+  );
+  overscroll-behavior: none;
+  height: 100%;
 }
 
 body {
@@ -13,11 +25,7 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: radial-gradient(
-    circle,
-    hsla(355, 72%, 82%, 1) 0%,
-    hsla(353, 74%, 68%, 1) 59%
-  );
+
   overflow-x: hidden;
 }
 
@@ -143,7 +151,7 @@ body {
 
   border-radius: 15px;
   font-family: "Tangerine", cursive;
-  font-size: 3rem;
+  font-size: 2.5rem;
   color: #333;
   background: rgba(255, 255, 255, 0.25);
   backdrop-filter: blur(10px);
