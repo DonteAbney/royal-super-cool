@@ -1,32 +1,71 @@
 <!doctype html>
-
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <title>Document</title>
-
+    <title>Royal-BHM</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>❤️</text></svg>">
   </head>
-
   <body>
     <div class="container">
       <div id="heart-pattern"></div>
-
       <div id="name">Trinity Royal</div>
-
+      <div id="desc">
+        To my beautiful, amazing Black Queen and future wife. <br />
+        Hey Siri, play "Bad Girl" by Usher.
+      </div>
       <svg
         id="heart-svg"
-        viewBox="0 0 130 130"
+        viewBox="2 7 126 116"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
           d="M 65,29 C 59,19 49,12 37,12 20,12 7,25 7,42 7,75 25,80 65,118 105,80 123,75 123,42 123,25 110,12 93,12 81,12 71,19 65,29 z"
         />
+        <text x="65" y="65" class="heart-text">Click Me</text>
       </svg>
-
+      <div id="textbox">Happy Black History Month Queen, Shine Bright!</div>
     </div>
+    <script>
+      const heart = document.getElementById("heart-svg");
+      const textDisplay = document.getElementById("textbox");
+      const messages = [
+        `"I've learned that people will forget what you said, people will forget what you did, but people will never forget how you made them feel." - Maya Angelou`,
+        `"Beauty is not something that you can consume. It is something that you are." - Lupita Nyong'o`,
+        `"You are your best thing." - Toni Morrison`,
+        `"I feel like I have a responsibility to show young girls that you can be beautiful and you can be smart and you can be kind and you can be all these things." - Janelle Monáe`,
+        `"I am a woman who is coming to believe that my beauty is not just in my face but in my spirit." - Tracee Ellis Ross`,
+        `"Caring for myself is not self-indulgence, it is self-preservation, and that is an act of political warfare." - Audre Lorde`,
+        `"Your self-worth is determined by you. You don’t have to depend on someone telling you who you are." - Michelle Obama`,
+        `"I believe that the privilege of a lifetime is being who you are." - Viola Davis`,
+        `"In nature, nothing is perfect and everything is perfect. Trees can be contorted, bent in weird ways, and they're still beautiful." - Alice Walker`,
+        `"The most alluring thing a woman can have is confidence." - Beyoncé`,
+        `"I love who I am, and I encourage other people to love and embrace who they are." - Serena Williams`,
+        `"I am not a victim. I am a victor." - Cicely Tyson`,
+        `"Beauty is about being comfortable in your own skin. It's about knowing and accepting who you are." - Zendaya`,
+        `"I am a moth to the light of the truth, and I’m also the light." - Eartha Kitt`,
+        `"I'm just a human being trying to be the best version of myself, and I think that’s beautiful." - Issa Rae`,
+      ];
+
+      let lastIndex = -1;
+
+      heart.addEventListener("click", () => {
+        let randomIndex;
+
+        do {
+          randomIndex = Math.floor(Math.random() * messages.length);
+        } while (randomIndex === lastIndex);
+
+        lastIndex = randomIndex;
+
+        textDisplay.textContent = messages[randomIndex];
+
+        textDisplay.style.transform = "scale(1.05)";
+        setTimeout(() => {
+          textDisplay.style.transform = "scale(1)";
+        }, 100);
+      });
+    </script>
   </body>
 </html>
